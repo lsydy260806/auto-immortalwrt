@@ -24,3 +24,15 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=AP-$(shell date +"%Y%m%d")-/1' include/image.
 
 #rm -rf feeds/packages/utils/watchcat
 #git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/watchcat feeds/packages/utils/watchcat
+
+rm -rf feeds/luci/applications/luci-app-adguardhome
+git clone https://github.com/lsydy260806/luci-app-adguardhome
+
+#rm -rf feeds/packages/net/adguardhome
+#git clone https://github.com/lsydy260806/adguardhome
+
+rm -rf feeds/luci/applications/luci-app-smartdns
+git clone https://github.com/lsydy260806/luci-app-smartdns
+
+rm -rf feeds/packages/net/smartdns
+git clone https://github.com/lsydy260806/smartdns
