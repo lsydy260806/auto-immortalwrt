@@ -30,13 +30,13 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=AP-$(shell date +"%Y%m%d")-/1' include/image.
 
 #调整smartdns和adguardhome插件
 rm -rf feeds/luci/applications/luci-app-adguardhome
-git clone https://github.com/lsydy260806/luci-app-adguardhome
+git clone https://github.com/lsydy260806/luci-app-adguardhome feeds/luci/applications/luci-app-adguardhome
 
 #rm -rf feeds/packages/net/adguardhome
-#git clone https://github.com/lsydy260806/adguardhome
+#git clone https://github.com/lsydy260806/adguardhome feeds/packages/net/adguardhome
 
 rm -rf feeds/luci/applications/luci-app-smartdns
-git clone https://github.com/lsydy260806/luci-app-smartdns
+git clone https://github.com/lsydy260806/luci-app-smartdns feeds/luci/applications/luci-app-smartdns
 
 rm -rf feeds/packages/net/smartdns
-git clone https://github.com/lsydy260806/smartdns
+git clone https://github.com/lsydy260806/smartdns feeds/packages/net/smartdns
