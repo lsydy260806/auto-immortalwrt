@@ -1,46 +1,46 @@
 #
 # https://github.com/P3TERX/Actions-OpenWrt
 #
-# File: .github/workflows/openwrt-bulder.yml
-# Description: Build OpenWrt using GitHub Actions
+# 文件: .github/workflows/openwrt-bulder.yml
+# 描述：使用 GitHub Actions 构建 OpenWrt
+
+# 版权所有 (c) 2019-2024 P3TERX 
 #
-# Copyright (c) 2019-2024 P3TERX <https://p3terx.com>
-#
-# This is free software, licensed under the MIT License.
-# See /LICENSE for more information.
+# 这是一个自由软件，根据 MIT 许可证授权。
+# 请参阅 /LICENSE 获取更多信息。
 #
 
-name: padavanonly360T7 Builder
+名称: padavanonly360T7 Builder
 
 于:
   repository_dispatch:
   workflow_dispatch:
 
-env:
+环境:
   REPO_URL: https://github.com/lsydy260806/immortalwrt-mt798x-6.6
   REPO_BRANCH: openwrt-24.10-6.6
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 360T7.config
+  配置文件: 360T7.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  RELEASE_FILE:  release-360T7.txt
+  发布文件: release-360T7.txt
   UPLOAD_BIN_DIR: false
-  UPLOAD_FIRMWARE: true
-  UPLOAD_RELEASE: true
+  上传固件: true
+  上传发布: true
   TZ: Asia/Shanghai
 
-jobs:
-  build:
-    runs-on: ubuntu-22.04
+职位:
+  构建:
+    运行于: ubuntu-22.04
 
-    steps:
-    - name: Checkout
-      uses: actions/checkout@main
+    步骤:
+    - 名称: 结账
+      使用: actions/checkout@main
 
-    - name: Initialization environment
+    - 名称: 初始化环境
       env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
+        DEBIAN_FRONTEND: 非交互式
+      运行: |
         sudo rm -rf /etc/apt/sources.list.d/* /usr/share/dotnet /usr/local/lib/android /opt/ghc /opt/hostedtoolcache/CodeQL
         sudo docker image prune --all --force
         sudo -E apt-get -qq update
@@ -51,14 +51,14 @@ jobs:
         sudo mkdir -p /workdir
         sudo chown $USER:$GROUPS /workdir
 
-    - name: Clone source code
-      working-directory: /workdir
-      run: |
+    - 名称: 克隆源代码
+      工作目录: /workdir
+      运行: |
         df -hT $PWD
         git clone $REPO_URL -b $REPO_BRANCH openwrt
         ln -sf /workdir/openwrt $GITHUB_WORKSPACE/openwrt
 
-    - name: Load custom feeds
+    - 名称: 加载自定义源
       run: |
         [ -e $FEEDS_CONF ] && mv $FEEDS_CONF openwrt/feeds.conf.default
         chmod +x $DIY_P1_SH
