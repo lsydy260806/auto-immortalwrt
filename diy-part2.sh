@@ -19,5 +19,8 @@ sed -i 's/192.168.6.1/192.168.123.1/g' package/base-files/files/bin/config_gener
 # Modify hostname
 sed -i 's/OpenWrt/LSYDY-Router/g' package/base-files/files/bin/config_generate
 
+# Modify filename, add date prefix
+sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=AP-$(shell date +"%Y%m%d")-/1' include/image.mk
+
 #rm -rf feeds/packages/utils/watchcat
 #git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/watchcat feeds/packages/utils/watchcat
