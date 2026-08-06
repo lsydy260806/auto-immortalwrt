@@ -25,6 +25,9 @@ sed -i 's/IMG_PREFIX:=/IMG_PREFIX:=AP-$(shell date +"%Y%m%d")-/1' include/image.
 #rm -rf feeds/packages/utils/watchcat
 #git clone --depth=1 https://github.com/openwrt/packages/tree/master/utils/watchcat feeds/packages/utils/watchcat
 
+Clear the login password
+#sed -i 's/$1$V4UetPzk$CYXluq4wUazHjmCDBCqXF.//g' openwrt/package/lean/default-settings/files/zzz-default-settings
+
 #调整smartdns和adguardhome插件
 rm -rf feeds/luci/applications/luci-app-adguardhome
 git clone https://github.com/lsydy260806/luci-app-adguardhome
