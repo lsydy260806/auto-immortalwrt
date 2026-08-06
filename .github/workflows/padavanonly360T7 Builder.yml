@@ -23,7 +23,6 @@
   配置文件: 360T7.config
   DIY_P1_SH: diy-part1.sh
   DIY_P2_SH: diy-part2.sh
-  发布文件: release-360T7.txt
   UPLOAD_BIN_DIR: false
   上传固件: true
   上传发布: true
