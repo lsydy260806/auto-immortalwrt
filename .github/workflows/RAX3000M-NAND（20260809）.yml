@@ -10,7 +10,7 @@
 # See /LICENSE for more information.
 #
 
-name: Build padavanonly360T7（20260806）
+name: Build RAX3000M-NAND（20260809）
 
 on:
   repository_dispatch:
@@ -20,10 +20,10 @@ env:
   REPO_URL: https://github.com/padavanonly/immortalwrt-mt798x-6.6
   REPO_BRANCH: openwrt-24.10-6.6
   FEEDS_CONF: feeds.conf.default
-  CONFIG_FILE: 360T7.config
-  DIY_P1_SH: diy-360T7-part1.sh
-  DIY_P2_SH: diy-360T7-part2.sh
-  RELEASE_FILE: release-360T7.txt 
+  CONFIG_FILE: rax3000m-nand.config
+  DIY_P1_SH: diy-RAX3000M-NAND-part1.sh
+  DIY_P2_SH: diy-RAX3000M-NAND-part2.sh
+  RELEASE_FILE: release-RAX3000M-NAND.txt 
   UPLOAD_BIN_DIR: false
   UPLOAD_FIRMWARE: true
   UPLOAD_RELEASE: true
