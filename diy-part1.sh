@@ -22,3 +22,9 @@
 #echo 'src-git LEAN https://github.com/lsydy260806/luci-app-adguardhome.git;main' >>feeds.conf.default
 #仅替换第 2 行的immortalwrt：
 sed -i '2s/immortalwrt/lsydy260806/' feeds.conf.default
+#仅替换第 2 行全部的immortalwrt为lsydy260806
+#sed -i "2s/immortalwrt/lsydy260806/g" feeds.conf.default
+
+#替换含特殊字符（如URL）时，改用其他分隔符避免混淆：
+#sed -i 's#http://#https://#g' url.txt
+#作为分隔符替代默认的/，防止路径中的/干扰匹配。
