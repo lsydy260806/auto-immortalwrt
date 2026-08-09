@@ -20,3 +20,5 @@
 #sed -i '1i src-git passwall_packages https://github.com/xiaorouji/openwrt-passwall-packages.git;main' feeds.conf.default
 #sed -i '2i src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
 #echo 'src-git LEAN https://github.com/lsydy260806/luci-app-adguardhome.git;main' >>feeds.conf.default
+#仅替换第 2 行的immortalwrt：
+sed -i '2s/immortalwrt/lsydy260806/' feeds.conf.default
