@@ -21,10 +21,11 @@
 #sed -i '2i src-git passwall https://github.com/xiaorouji/openwrt-passwall.git;main' feeds.conf.default
 #echo 'src-git LEAN https://github.com/lsydy260806/luci-app-adguardhome.git;main' >>feeds.conf.default
 #仅替换第 2 行的immortalwrt：
-sed -i '2s/immortalwrt/lsydy260806/' feeds.conf.default
+#sed -i '2s/immortalwrt/lsydy260806/' feeds.conf.default
 #仅替换第 2 行全部的immortalwrt为lsydy260806
 #sed -i "2s/immortalwrt/lsydy260806/g" feeds.conf.default
 
 #替换含特殊字符（如URL）时，改用其他分隔符避免混淆：
 #sed -i 's#http://#https://#g' url.txt
+sed -i 's#https://github.com/immortalwrt/luci.git;openwrt-24.10#https://github.com/lsydy260806/luci.git;openwrt-24.10#g' feeds.conf.default
 #作为分隔符替代默认的/，防止路径中的/干扰匹配。
