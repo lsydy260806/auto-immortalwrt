@@ -1,5 +1,5 @@
 237大佬源码编译360T7路由器固件。
-immortalwrt23.05（闭源MTK驱动）主路由版。
+immortalwrt24.10（闭源MTK驱动）主路由版。
 含模块：adguard、smartDNS、luci-proto-relay。
 默认IP地址：192.168.123.1
 密码：空
